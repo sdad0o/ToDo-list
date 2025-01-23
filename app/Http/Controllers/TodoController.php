@@ -10,8 +10,7 @@ class TodoController extends Controller
     public function index()
     {
         $todos = Todo::latest()->get();
-        $editing = request()->has('edit') ? request()->edit : null;
-        return view('index', compact('todos', 'editing'));
+        return view('index', compact('todos'));
     }
 
     public function store(Request $request)
@@ -32,7 +31,11 @@ class TodoController extends Controller
         ]);
 
         $todo->update($validated);
-        return redirect()->route('index')->with('success', 'Task updated successfully!');
+
+        return response()->json([
+            'message' => 'Task updated successfully',
+            'task' => $todo->task
+        ]);
     }
 
     public function destroy(Todo $todo)
