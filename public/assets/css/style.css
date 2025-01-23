@@ -1,0 +1,163 @@
+/* General styles */
+body {
+    background: #f3f4f6;
+    color: #333;
+    font-family: 'Figtree', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container styles */
+.container {
+    width: 60%;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Heading styles */
+h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #0FC57C;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Input styling */
+input[type="text"] {
+    width: 96%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #0FC57C;
+    outline: none;
+    background: #ffffff;
+}
+
+/* Button styling */
+button {
+    background: linear-gradient(to right, #0FC57C, #0DA96C);
+    color: #fff !important;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    padding: 12px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(to right, #0DA96C, #098F5C);
+    transform: translateY(-2px);
+}
+
+/* Error message */
+.error {
+    color: #CF2323;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Task list styles */
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f9f9f9;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+li:hover {
+    transform: translateY(-3px);
+}
+
+li input[type="checkbox"] {
+    transform: scale(1.3);
+    cursor: pointer;
+    accent-color: #0FC57C;
+}
+
+li a,
+li button {
+    font-size: 14px;
+    color: #0FC57C;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+li a:hover,
+li button:hover {
+    color: #0DA96C;
+}
+
+/* Completed tasks */
+.completed {
+    text-decoration: line-through;
+    color: #888;
+    opacity: 0.7;
+}
+
+/* Edit form */
+.edit-form input[type="text"] {
+    flex-grow: 1;
+}
+
+a {
+    color: #ffffff;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #333;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        max-width: 90%;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
