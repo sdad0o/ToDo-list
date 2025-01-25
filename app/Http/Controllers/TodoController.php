@@ -33,10 +33,11 @@ class TodoController extends Controller
         $todo->update($validated);
 
         return response()->json([
-            'message' => 'Task updated successfully',
+            'message' => 'Task updated successfully!',
             'task' => $todo->task
         ]);
     }
+
 
     public function destroy(Todo $todo)
     {
