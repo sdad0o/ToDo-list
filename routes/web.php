@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\TodoController;
+
 
 // Main Todo List Interface
 Route::redirect('/', '/todos');  // Redirect root to todos index
@@ -14,3 +16,7 @@ Route::resource('todos', TodoController::class)->parameters([
 // Toggle Completion Status
 Route::patch('todos/{todo}/toggle', [TodoController::class, 'toggleComplete'])
     ->name('todos.toggle');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
