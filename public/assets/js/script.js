@@ -14,7 +14,6 @@ const openModal = function (e) {
 
     taskIdInput.value = taskId;
     taskInput.value = taskText;
-    
     editForm.setAttribute('action', `/todos/${taskId}`); // Set dynamic form action
 
     modal.classList.remove('hidden');

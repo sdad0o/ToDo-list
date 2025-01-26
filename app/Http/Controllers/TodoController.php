@@ -10,14 +10,13 @@ class TodoController extends Controller
     public function index()
     {
         $todos = Todo::latest()->get();
-        return view('index', compact('todos'));
+        return view('home', compact('todos'));
     }
 
     public function store(Request $request)
     {
         $validated = $request->validate([
             'task' => 'required|string|max:255',
-            // Remove 'is_completed' since new tasks shouldn't be completed by default
         ]);
 
         Todo::create($validated);

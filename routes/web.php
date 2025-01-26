@@ -6,7 +6,7 @@ use App\Http\Controllers\TodoController;
 
 
 // Main Todo List Interface
-Route::redirect('/', '/todos');  // Redirect root to todos index
+Route::redirect('/', '/login');  // Redirect root to todos index
 
 // Todo Resource Routes
 Route::resource('todos', TodoController::class)->parameters([
@@ -19,4 +19,4 @@ Route::patch('todos/{todo}/toggle', [TodoController::class, 'toggleComplete'])
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
